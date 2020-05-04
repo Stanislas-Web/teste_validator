@@ -33,7 +33,8 @@ app.get("/articles", (req, res) => {
         } else {
             res.render("articles/index", {
                 title: "articles",
-                articles: result
+                articles: result,
+                
             });
         }
     })
@@ -42,7 +43,8 @@ app.get("/articles", (req, res) => {
 app.get("/articles/ajouter", (req, res) => {
     res.render("articles/ajouter", {
         title: "ajouter un article",
-        error: null
+        error: null,
+        form: null
     });
 })
 
@@ -50,8 +52,9 @@ app.post("/articles", verification,  (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) 
     {
-        return res.render('articles/ajouter', {title: "Ajouter un article", error: errors.array()});
-        // console.log(errors.array();
+        // console.log();
+        return res.render('articles/ajouter', {title: "Ajouter un article", error: errors.array(), form: req.body });
+        
         
     }
     else
