@@ -1,0 +1,27 @@
+<% layout ("../base") -%>
+
+<h1 style="text-align: center;">Liste d'articles</h1>
+<table class="table table-bordered" style="margin-top: 100px;">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Type</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Marque</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Taille</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (article of articles ) { %>
+        <tr>
+            <td><%= article.nom %></td>
+            <td><%= article.type %></td>
+            <td><%= article.prixUHT %> $</td>
+            <td><%= article.Marque %></td>
+            <td><%= article.quantite %></td>
+            <td><%= article.taille %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
